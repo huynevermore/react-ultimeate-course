@@ -1,0 +1,9 @@
+.button-none {
+    background-color: gray;
+}
+.button-correct {
+    background-color: green;
+}
+.button-nocorrect {
+    background-color: red;
+}

@@ -3,6 +3,10 @@ import JSX from './JSX';
 import Props from './Props';
 import Button from './components/Button';
 import State from './State';
+import HandleEvent from './HandleEvent';
+import Condition from './Condition';
+import ListKey from './ListKey';
+import LiftingStateUp from './LiftingStateUp';
 
 function App() {
   const address = {
@@ -28,6 +32,18 @@ function App() {
       />
 
       <State />
+
+      <br />
+      <HandleEvent />
+
+      <br />
+      <Condition />
+
+      <br />
+      <ListKey />
+
+      <br />
+      <LiftingStateUp />
     </>
   )
 }

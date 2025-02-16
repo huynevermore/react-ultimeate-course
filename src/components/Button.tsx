@@ -1,3 +1,4 @@
+import styles from './button.module.css';
 
 interface ButtonProps {
     text?: string;
@@ -10,7 +11,7 @@ interface ButtonProps {
 
 function Button({ text = 'Default Button', children, ...restProps }: ButtonProps) {
     return (
-        <button {...restProps}>
+        <button {...restProps} className={styles.outline}>
             {text} <br />
             {children}
         </button>
