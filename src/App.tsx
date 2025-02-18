@@ -7,6 +7,9 @@ import HandleEvent from './HandleEvent';
 import Condition from './Condition';
 import ListKey from './ListKey';
 import LiftingStateUp from './LiftingStateUp';
+import GuestGreeting from './example/huy/GuestGreeting';
+import GenerateBox from './example/huy/GenerateBox';
+import BoxGenerator from './example/huy/GenerateBox';
 
 function App() {
   const address = {
@@ -44,6 +47,12 @@ function App() {
 
       <br />
       <LiftingStateUp />
+
+      <br/>
+      <GuestGreeting />
+
+      <br/>
+      <BoxGenerator />
     </>
   )
 }
