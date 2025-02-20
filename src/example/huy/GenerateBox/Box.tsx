@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { randomColor } from '../../../utils/randomColor';
 
 interface BoxProps {
     box: number;
@@ -6,14 +7,11 @@ interface BoxProps {
   }
 function Box({box,index}:BoxProps) {
     const [bgColor, setBgColor]=useState('antiquewhite')
-    const getRandomColor = () => {
-        return `hsl(${Math.random() * 360}, 70%, 80%)`;
-      };
 
     return (
         <div
               key={index}
-              onClick={() => setBgColor(getRandomColor)}
+              onClick={() => setBgColor(randomColor())}
               style={{
                 width: 80,
                 height: 80,

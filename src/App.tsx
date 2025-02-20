@@ -8,8 +8,8 @@ import Condition from './Condition';
 import ListKey from './ListKey';
 import LiftingStateUp from './LiftingStateUp';
 import GuestGreeting from './example/huy/GuestGreeting';
-import GenerateBox from './example/huy/GenerateBox';
-import BoxGenerator from './example/huy/GenerateBox';
+import { GenerateBox } from './example/huy/GenerateBox';
+// import BoxGenerator from './example/huy/GenerateBox';
 
 function App() {
   const address = {
@@ -52,7 +52,7 @@ function App() {
       <GuestGreeting />
 
       <br/>
-      <BoxGenerator />
+      <GenerateBox />
     </>
   )
 }
