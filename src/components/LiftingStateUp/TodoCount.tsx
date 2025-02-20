@@ -1,6 +1,13 @@
-function TodoCount() {
+import { ITodoItem } from "../../types";
+
+
+interface TodoCountProps {
+  todos: ITodoItem[];
+}
+
+function TodoCount({ todos }: TodoCountProps) {
   return (
-    <div>Todo Count: 12</div>
+    <div>Todo Count: {todos.length}</div>
   )
 }
 

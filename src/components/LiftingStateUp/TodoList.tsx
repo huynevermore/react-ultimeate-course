@@ -1,10 +1,16 @@
-import React from 'react'
 import TodoItem from './TodoItem'
+import { ITodoItem } from '../../types'
 
-function TodoList() {
+interface TodoListProps {
+  todos: ITodoItem[];
+  deleteTodo: (id: number) => void;
+}
+function TodoList({ todos, deleteTodo }: TodoListProps ) {
   return (
     <div>
-        <TodoItem />
+      {todos.map(todo => (
+          <TodoItem key={todo.id} todo={todo} deleteTodo={deleteTodo} />
+      ))}
     </div>
   )
 }

@@ -9,6 +9,8 @@ import ListKey from './ListKey';
 import LiftingStateUp from './LiftingStateUp';
 import GuestGreeting from './example/huy/GuestGreeting';
 import { GenerateBox } from './example/huy/GenerateBox';
+import Form from './Form';
+import StateHook from './StateHook';
 // import BoxGenerator from './example/huy/GenerateBox';
 
 function App() {
@@ -53,6 +55,20 @@ function App() {
 
       <br/>
       <GenerateBox />
+
+      <br />
+      
+      <Form />
+      <br />
+
+      <StateHook />
+
+
+
+      <br />
+      <br /><br />
+      <br />
+      <br />
     </>
   )
 }

@@ -16,6 +16,7 @@ export default function GenerateBox() {
 
   return (
     <div style={{ padding: 20, textAlign: "center" }}>
+        <h1>GenerateBox: Huy</h1>
       <label>
         Number of boxes:
         <input

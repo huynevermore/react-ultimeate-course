@@ -1,9 +1,15 @@
+import { ITodoItem } from '../../types';
 import TodoList from './TodoList'
 
-function Todos() {
+interface TodosProps {
+  todos: ITodoItem[];
+  deleteTodo: (id: number) => void;
+}
+
+function Todos({ todos, deleteTodo }: TodosProps) {
   return (
     <div>
-        <TodoList />
+        <TodoList todos={todos} deleteTodo={deleteTodo} />
     </div>
   )
 }

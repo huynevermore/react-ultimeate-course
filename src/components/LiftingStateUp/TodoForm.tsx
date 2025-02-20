@@ -1,10 +1,20 @@
-import React from 'react'
+import React from 'react';
 
-function TodoForm() {
+interface TodoFormProps {
+    addTodo: (title: string) => void;
+}
+
+function TodoForm({ addTodo }: TodoFormProps) {
+  const [title, setTitle] = React.useState("");
+
+  function onChangeTitle(e: React.ChangeEvent<HTMLInputElement>) {
+    setTitle(e.target.value)
+  }
+
   return (
     <div>
-        <input type="text" />
-        <button type="button">Add Todo</button>
+        <input type="text" onChange={onChangeTitle}/>
+        <button type="button" onClick={() => addTodo(title)}>Add Todo</button>
     </div>
   )
 }

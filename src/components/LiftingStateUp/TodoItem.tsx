@@ -1,9 +1,14 @@
-import React from 'react'
+import { ITodoItem } from '../../types'
 
-function TodoItem() {
+interface TodoItemProps {
+  todo: ITodoItem;
+  deleteTodo: (id: number) => void
+}
+
+function TodoItem({ todo, deleteTodo }: TodoItemProps) {
   return (
     <div>
-        Title: tony <button type="button">Delete Todo</button>
+        Title: {todo.title} <button type="button" onClick={() => deleteTodo(todo.id)}>Delete Todo</button>
     </div>
   )
 }
