@@ -11,6 +11,8 @@ import GuestGreeting from './example/huy/GuestGreeting';
 import { GenerateBox } from './example/huy/GenerateBox';
 import Form from './Form';
 import StateHook from './StateHook';
+import ColorBox from './sample-app/tony/ColorBox';
+import Arcodion from './sample-app/tony/Arcodion';
 // import BoxGenerator from './example/huy/GenerateBox';
 
 function App() {
@@ -62,6 +64,12 @@ function App() {
       <br />
 
       <StateHook />
+
+      <br />
+      <ColorBox />
+
+      <br />
+      <Arcodion />
 
 
 
