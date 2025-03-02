@@ -14,8 +14,12 @@ import StateHook from './StateHook';
 import ColorBox from './sample-app/tony/ColorBox';
 import Arcodion from './sample-app/tony/Arcodion';
 // import BoxGenerator from './example/huy/GenerateBox';
+import EffectHook from './EffectHook';
+import React from 'react';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = React.useState(true);
+
   const address = {
     city: 'HCM',
     ward: 13
@@ -70,6 +74,15 @@ function App() {
 
       <br />
       <Arcodion />
+
+      <br />
+      <br />
+      <div>
+        <button onClick={() => setIsAuthenticated(prevState => !prevState)}>Toggle Show/Hide EffectHook</button>
+      </div>
+      {isAuthenticated && (
+        <EffectHook />
+      )}
 
 
 

@@ -12,6 +12,32 @@
         const sum = () => 2323;
 
         console.log('sum: ', sum())
+        const users = [];
+        fetch('https://jsonplaceholder.typicode.com/users')
+          .then(res => res.json())
+          .then(data => {
+            users.push(data);
+            console.log('users: ', users)
+          })
+        const p = new Promise((resolve, reject) => {
+          reject("2312")
+        })
+
+        // show loading
+        p
+          .then(data => {
+            console.log('success: ', data)
+          })
+          .catch(err => {
+            console.log('error: ', err)
+          })
+          .finally(() => {
+            console.log('finally: ')
+            // hide loading
+          })
+
+        console.log('promise fetch: ',  fetch('https://jsonplaceholder.typicode.com/users').then(data => data.json()))
+
 
     </script>
   </body>
