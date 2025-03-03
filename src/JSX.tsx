@@ -1,4 +1,5 @@
 import React from 'react';
+import { useAppContext } from './context/AppContext';
 
 function Element1() {
     return (
@@ -7,6 +8,9 @@ function Element1() {
 }
 
 function JSX() {
+    const { isLoading } = useAppContext();
+
+    console.log("isLoading: ", isLoading)
 
     const element_1 = (
         <div>element1</div>

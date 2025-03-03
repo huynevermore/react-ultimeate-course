@@ -1,4 +1,5 @@
 import Button from "./components/Button"
+import { useAppContext } from "./context/AppContext"
 interface ComponentProps {
     firstName: string,
     lastName?: string,
@@ -12,6 +13,8 @@ function Props({ firstName, lastName = 'nguyen', component1: Component1, compone
         Component1,
         component2
     })
+    const { toggleShowLoading } = useAppContext();
+
     return (
         <div>
             Props <br />
@@ -19,7 +22,9 @@ function Props({ firstName, lastName = 'nguyen', component1: Component1, compone
                 text="Submit"
                 type="button"
                 className="button"
-                onClick={() => {}}
+                onClick={() => {
+                    toggleShowLoading()
+                }}
             >
                 this is button
             </Button>

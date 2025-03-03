@@ -1,5 +1,4 @@
 import React from "react"
-
 /* 
 &&: phân biệt vế
 - vế trái là true thì lấy vế phải
@@ -24,11 +23,14 @@ function Condition() {
         renderButton = <div>authenticated</div>
     }
 
+    console.log('COndition')
+
     return (
         <div>
             <h1>Condition</h1>
             {renderButton}
         </div>
+
     )
 }
 

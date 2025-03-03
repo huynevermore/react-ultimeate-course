@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { randomColor } from '../../../utils/randomColor';
+import { useAppContext } from "../../../context/AppContext";
 
 interface BoxProps {
     box: number;
     index: string;
   }
 function Box({box,index}:BoxProps) {
+    const { isLoading } = useAppContext();
+    console.log('Box of AppContext: ', isLoading)
     const [bgColor, setBgColor]=useState('antiquewhite')
 
     return (

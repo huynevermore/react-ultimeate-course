@@ -16,6 +16,7 @@ import Arcodion from './sample-app/tony/Arcodion';
 // import BoxGenerator from './example/huy/GenerateBox';
 import EffectHook from './EffectHook';
 import React from 'react';
+import Todo from './Todo';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = React.useState(true);
@@ -83,6 +84,9 @@ function App() {
       {isAuthenticated && (
         <EffectHook />
       )}
+
+      <br />
+      <Todo />
 
 
 

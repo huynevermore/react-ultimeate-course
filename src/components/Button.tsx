@@ -18,4 +18,22 @@ function Button({ text = 'Default Button', children, ...restProps }: ButtonProps
     )
 }
 
-export default Button
+export default Button;
+
+/* props: icon, outline = true/false, isLoading
+
+
+const className = "xxxxxxxx"
+if(!outline) {
+    className += "outline-0"
+}
+return (
+    <>
+        {(!isLoading && icon && <>icon</>}
+        {isLoading && <div>loading</div>}
+        <button className={className}>xxx</button>
+    </>
+)
+
+
+*/
