@@ -17,6 +17,7 @@ import Arcodion from './sample-app/tony/Arcodion';
 import EffectHook from './EffectHook';
 import React from 'react';
 import Todo from './Todo';
+import RefHook from './RefHook';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = React.useState(true);
@@ -87,6 +88,9 @@ function App() {
 
       <br />
       <Todo />
+
+      <br />
+      <RefHook />
 
 
 
