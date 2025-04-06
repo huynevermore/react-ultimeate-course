@@ -18,6 +18,7 @@ import EffectHook from './EffectHook';
 import React from 'react';
 import Todo from './Todo';
 import RefHook from './RefHook';
+import PerformanceHook from './PerformanceHook';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = React.useState(true);
@@ -91,6 +92,9 @@ function App() {
 
       <br />
       <RefHook />
+
+      <br />
+      <PerformanceHook />
 
 
 

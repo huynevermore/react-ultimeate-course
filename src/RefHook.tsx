@@ -1,4 +1,5 @@
 import React from 'react'
+import { useResizeWindow } from './hooks/useResizeWIndow';
 
 /*
 - can reference DOM element in jsx
@@ -111,6 +112,8 @@ function RefHook() {
   const inputRef = React.useRef<HTMLInputElement | null>(null);
   const isSkipFirstRender = React.useRef(true);
   const modalRef = React.useRef<any>(null);
+  const { isSmallScreen } = useResizeWindow();
+
   
   React.useEffect(() => {
     if (isSkipFirstRender.current) {
@@ -148,6 +151,7 @@ function RefHook() {
     <div>
       <h1>RefHook</h1>
       Count Ref: {countRef.current} <br />
+      Smalll Screen: {isSmallScreen ? 'true' : 'false'} <br />
       <input type="text" ref={inputRef} />
       <button type="button" ref={buttonRef} onClick={testButtonRef}>update bacgkround color</button>
     
