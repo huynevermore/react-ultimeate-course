@@ -1,4 +1,6 @@
 import React from "react"
+import { useDispatch } from "react-redux";
+import { setTheme } from "./redux/app.actions";
 /* 
 &&: phân biệt vế
 - vế trái là true thì lấy vế phải
@@ -16,6 +18,7 @@ import React from "react"
 
 
 function Condition() {
+    const dispatch = useDispatch();
     const [auth, setAuth] = React.useState(false);
     let renderButton = null;
 
@@ -28,6 +31,14 @@ function Condition() {
     return (
         <div>
             <h1>Condition</h1>
+            <button 
+                type="button"
+                onClick={() => {
+                    dispatch(setTheme('dark'))
+                }}
+            >
+                Update theme
+            </button>
             {renderButton}
         </div>
 

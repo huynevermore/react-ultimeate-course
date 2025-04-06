@@ -91,7 +91,7 @@ function App() {
       <Todo />
 
       <br />
-      <RefHook />
+      <RefHook name="tony" />
 
       <br />
       <PerformanceHook />

@@ -1,5 +1,8 @@
 import React from 'react'
 import { useResizeWindow } from './hooks/useResizeWIndow';
+import { connect } from 'react-redux';
+import { IProduct, RootState } from './types';
+import { addProduct } from './redux/app.actions';
 
 /*
 - can reference DOM element in jsx
@@ -105,7 +108,7 @@ const Modal = React.forwardRef((props, ref: any) => {
   )
 })
 
-function RefHook() {
+function RefHook({ productFilteredNew, addProduct }) {
   const [, setForceUpdate] = React.useState(Date.now());
   const buttonRef = React.useRef<any>(null);
   const countRef = React.useRef(0);
@@ -155,6 +158,22 @@ function RefHook() {
       <input type="text" ref={inputRef} />
       <button type="button" ref={buttonRef} onClick={testButtonRef}>update bacgkround color</button>
     
+      <h3>Demo mapstaptoprops</h3>
+      {productFilteredNew.map((item: any) => (
+        <div key={item.id}>
+          Name: {item.name} <br />
+          Status: {item.status}
+        </div>
+      ))}
+      <button type="button" onClick={() => {
+        addProduct({
+          id: Date.now(),
+          name: "TITLE" + Date.now(),
+          status: 'new'
+        })
+      }}>Add Product</button>
+    
+
       <h3>Demo skip run useEffect first render</h3>
 
       <h3>forwardRef</h3>
@@ -166,4 +185,19 @@ function RefHook() {
   )
 }
 
-export default RefHook
+function mapStateToProps(state: RootState, ownProps: any) {
+  const product = state.app.product;
+  const productFilteredNew = product.filter(item => item.status === 'new');
+  console.log("REF HOOK -------------: ", ownProps)
+  return {
+    productFilteredNew
+  }
+}
+
+function mapDispatchToProps(dispatch: any) {
+  return {
+    addProduct: (payload: IProduct) => dispatch(addProduct(payload))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RefHook) 
