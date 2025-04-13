@@ -19,7 +19,7 @@ import { setTheme } from "./redux/app.actions";
 
 function Condition() {
     const dispatch = useDispatch();
-    const [auth, setAuth] = React.useState(false);
+    const [auth] = React.useState(false);
     let renderButton = null;
 
     if(auth) {

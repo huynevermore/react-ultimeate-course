@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAppContext } from './context/AppContext';
+import { useLocation, useParams } from 'react-router-dom';
 
 function Element1() {
     return (
@@ -8,9 +9,11 @@ function Element1() {
 }
 
 function JSX() {
+    const params = useParams();
     const { isLoading } = useAppContext();
 
-    console.log("isLoading: ", isLoading)
+    console.log('params: ',params)
+
 
     const element_1 = (
         <div>element1</div>

@@ -11,7 +11,7 @@ import { addProduct } from './redux/app.actions';
 */
 // let countRef = 0;
 
-const Modal = React.forwardRef((props, ref: any) => {
+const Modal = React.forwardRef((_, ref: any) => {
   const [isShowModal, setIsShowModal] = React.useState(false);
 
   React.useImperativeHandle(ref, () => {
@@ -108,7 +108,7 @@ const Modal = React.forwardRef((props, ref: any) => {
   )
 })
 
-function RefHook({ productFilteredNew, addProduct }) {
+function RefHook() {
   const [, setForceUpdate] = React.useState(Date.now());
   const buttonRef = React.useRef<any>(null);
   const countRef = React.useRef(0);
@@ -159,12 +159,12 @@ function RefHook({ productFilteredNew, addProduct }) {
       <button type="button" ref={buttonRef} onClick={testButtonRef}>update bacgkround color</button>
     
       <h3>Demo mapstaptoprops</h3>
-      {productFilteredNew.map((item: any) => (
+      {/* {productFilteredNew.map((item: any) => (
         <div key={item.id}>
           Name: {item.name} <br />
           Status: {item.status}
         </div>
-      ))}
+      ))} */}
       <button type="button" onClick={() => {
         addProduct({
           id: Date.now(),

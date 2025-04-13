@@ -25,7 +25,7 @@ export const TodoContext = React.createContext<ITodoContext>({
 
 export const TodoProvider = ({ children }: React.PropsWithChildren) => {
   const [isLoading, setIsLoading] = React.useState(false);
-  const [error, setError] = React.useState('');
+  const [error] = React.useState('');
   const [todos, setTodos] = React.useState<ITodoItem[]>([]);
 
   function toggleShowLoading() {

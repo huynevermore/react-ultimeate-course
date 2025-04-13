@@ -1,8 +1,5 @@
-import React from 'react';
 
-
-
-function GuestGreeting(props) {
+function GuestGreeting() {
     return (
         <div>
             123

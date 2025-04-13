@@ -1,5 +1,5 @@
 
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link, Routes, Route, NavLink } from 'react-router-dom';
 import JSX from './JSX';
 import Props from './Props';
 import Button from './components/Button';
@@ -20,6 +20,10 @@ import React from 'react';
 import Todo from './Todo';
 import RefHook from './RefHook';
 import PerformanceHook from './PerformanceHook';
+import TodoRoute from './TodoRoute';
+import TodoRouteShow from './TodoRouteShow';
+import User from './User';
+import GoogleAnalytic from './GoogleAnalytic';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = React.useState(true);
@@ -31,9 +35,10 @@ function App() {
 
   return (
     <>
+      <GoogleAnalytic />
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+          <div className="w-full block md:w-auto" id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
                 <Link 
@@ -44,12 +49,12 @@ function App() {
                 </Link>
               </li>
               <li>
-                <Link 
+                <NavLink 
                   to="/props"
                   className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
                 >
                   Props
-                </Link>
+                </NavLink>
               </li>
               <li>
                 <Link 
@@ -66,6 +71,22 @@ function App() {
                   className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
                 >
                   Handle Event
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/todo"
+                  className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                >
+                  Todo
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/user"
+                  className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                >
+                  User
                 </Link>
               </li>
             </ul>
@@ -95,6 +116,15 @@ function App() {
           />
           <Route path="/state" element={<State />} />
           <Route path="/handle-event" element={  <HandleEvent />} />
+          <Route path="/todo" element={<TodoRoute />} />
+          <Route path="/todo/:todoId" element={<TodoRouteShow />} />
+          {/* <Route path="/user" element={<User />} />
+          <Route path="/user/profile" element={<div>this is profile</div>} />
+          <Route path="/user/account" element={<div>this is account</div>} /> */}
+          <Route path="/user" element={<User />}>
+            <Route path="profile" element={<div>this is profile</div>} />
+            <Route path="account" element={<div>this is account</div>} />
+          </Route>
         </Routes>
       </main>
 

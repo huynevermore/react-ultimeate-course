@@ -14,7 +14,7 @@ step 3:
 function ColorBox() {
   //state
   const [color, setColor] = React.useState<string | null>(null);
-  const [colorBoxs, setColorBoxs] = React.useState([
+  const [colorBoxs] = React.useState([
     { id: 1, title: 'red', bgColor: 'red' },
     { id: 1, title: 'yellow', bgColor: 'yellow' },
     { id: 1, title: 'aqua', bgColor: 'aqua' },

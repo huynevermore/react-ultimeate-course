@@ -3,18 +3,17 @@ import React from 'react'
 
 import MemoComponent from './components/MemoComponent';
 import { useResizeWindow } from './hooks/useResizeWIndow';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from './types';
 
 function PerformanceHook() {
-  const dispatch = useDispatch();
   const state = useSelector(state => state);
   const theme = useSelector((state: RootState) => state.app.theme);
   const product = useSelector((state: RootState) => state.app.product);
   const productFilteredNew = product.filter(item => item.status === 'new')
 
   const { isSmallScreen } = useResizeWindow();
-  const [count, setCount] = React.useState(1);
+  const [count] = React.useState(1);
   const [productItem, setProductItem] = React.useState({
     name: 'tony',
     id: 1

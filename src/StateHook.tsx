@@ -1,5 +1,13 @@
 import React from 'react';
 
+const awaitTime = (time = 1000) => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve()
+        }, time)
+    })
+}
+
 function createInitialCount() {
     console.log('createInitialCount')
     return 1;
@@ -8,7 +16,9 @@ function createInitialCount() {
 function StateHook() {
     const [count, setCount] = React.useState(createInitialCount);
 
-    function updateCount() {
+
+    async function updateCount() {
+        // batching state update
         // setCount(count + 1);
         // setCount(count + 1);
         // setCount(count + 1);
@@ -17,6 +27,7 @@ function StateHook() {
         // syntax function: arrow function
         // updater function
         setCount(prevState => prevState + 1);
+        await awaitTime(3000);
         setCount(prevState => prevState + 1);
         setCount(prevState => prevState + 1);
     }
