@@ -1,6 +1,5 @@
 import React from 'react';
-import { useAppContext } from './context/AppContext';
-import { useLocation, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 
 function Element1() {
     return (
@@ -10,7 +9,6 @@ function Element1() {
 
 function JSX() {
     const params = useParams();
-    const { isLoading } = useAppContext();
 
     console.log('params: ',params)
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 
 function TodoRouteShow() {
-  const [todo, setTodo] = React.useState(null);
+  const [todo, setTodo] = React.useState<any>(null);
   const params = useParams();
   console.log('params: ', params)
 

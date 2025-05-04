@@ -24,17 +24,36 @@ import TodoRoute from './TodoRoute';
 import TodoRouteShow from './TodoRouteShow';
 import User from './User';
 import GoogleAnalytic from './GoogleAnalytic';
+import InteractiveComponent from './components/interactive-component';
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = React.useState(true);
+  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
 
   const address = {
     city: 'HCM',
     ward: 13
   }
 
+  React.useEffect(() => {
+    setTimeout(() => {
+      setIsAuthenticated(true)
+    }, 1000)
+  }, [])
+
   return (
     <>
+    <InteractiveComponent>
+      <div>
+        {isAuthenticated  && (
+          <div className="layoutShift">
+            <img src="/images/skeleton.webp" alt="" width={500} height={200} />
+          </div>
+        )}
+      </div>
+    </InteractiveComponent>
+     
+      
+      
       <GoogleAnalytic />
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">

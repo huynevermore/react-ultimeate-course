@@ -2,11 +2,11 @@ import React from 'react'
 import TodoForm from './TodoForm'
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
-function TodoList({ todos }) {
+function TodoList({ todos }: any) {
   const navigate = useNavigate();
   return (
     <>
-      {todos.map(todo => (
+      {todos.map((todo: any) => (
         <div key={todo.id}>
           Title: {todo.title} <br />
           <button type="button" onClick={() => navigate(`/todo/${todo.id}`)}>View Detail</button>

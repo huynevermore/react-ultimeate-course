@@ -1,7 +1,7 @@
 import React from 'react';
 
 const awaitTime = (time = 1000) => {
-    return new Promise(resolve => {
+    return new Promise<void>(resolve => {
         setTimeout(() => {
             resolve()
         }, time)
